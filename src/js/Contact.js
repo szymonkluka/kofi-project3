@@ -16,9 +16,9 @@ class Contact {
     thisContact.dom.wrapper = element;
     thisContact.dom.form = thisContact.dom.wrapper.querySelector(select.containerOf.newForm);
     //console.log(thisContact.dom.form);
-    thisContact.dom.names = thisContact.dom.wrapper.querySelector('#name');
-    thisContact.dom.tiles = thisContact.dom.wrapper.querySelector('#title');
-    thisContact.dom.messages = thisContact.dom.wrapper.querySelector('#message');
+    thisContact.dom.name = thisContact.dom.wrapper.querySelector('#name');
+    thisContact.dom.title = thisContact.dom.wrapper.querySelector('#title');
+    thisContact.dom.message = thisContact.dom.wrapper.querySelector('#message');
 
     thisContact.dom.inputs = {};
 
@@ -40,9 +40,9 @@ class Contact {
     const thisContact = this;
     const url = select.db.url + '/' + select.db.messages;
     const payload = {
-      name: thisContact.dom.names.value,
-      title: thisContact.dom.tiles.value,
-      message: thisContact.dom.messages.value,
+      name: thisContact.dom.name.value,
+      title: thisContact.dom.title.value,
+      message: thisContact.dom.message.value,
     };
 
 
