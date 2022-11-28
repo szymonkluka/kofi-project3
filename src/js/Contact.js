@@ -3,7 +3,7 @@ import { select } from './settings.js';
 class Contact {
   constructor(element) {
     const thisContact = this;
-    thisContact.products = [];
+    thisContact.messages = [];
     thisContact.getElements(element);
     thisContact.initActions();
 
@@ -15,25 +15,13 @@ class Contact {
     thisContact.dom = {};
     thisContact.dom.wrapper = element;
     thisContact.dom.form = thisContact.dom.wrapper.querySelector(select.containerOf.newForm);
-    console.log(thisContact.dom.form);
-    thisContact.dom.submitBtn = thisContact.dom.wrapper.querySelector(
-      select.containerOf.submitBtn
-    );
-
-    thisContact.dom.names = thisContact.dom.wrapper.querySelector(select.containerOf.names);
-    thisContact.dom.tiles = thisContact.dom.wrapper.querySelector(select.containerOf.titles);
-    thisContact.dom.messages = thisContact.dom.wrapper.querySelector(select.containerOf.messages);
+    //console.log(thisContact.dom.form);
+    thisContact.dom.names = thisContact.dom.wrapper.querySelector('#name');
+    thisContact.dom.tiles = thisContact.dom.wrapper.querySelector('#title');
+    thisContact.dom.messages = thisContact.dom.wrapper.querySelector('#message');
 
     thisContact.dom.inputs = {};
-    thisContact.dom.inputs.name = thisContact.dom.wrapper.querySelector(
-      select.containerOf.input.name
-    );
-    thisContact.dom.inputs.title = thisContact.dom.wrapper.querySelector(
-      select.containerOf.input.title
-    );
-    thisContact.dom.inputs.message = thisContact.dom.wrapper.querySelector(
-      select.containerOf.input.message
-    );
+
 
 
 
@@ -50,12 +38,11 @@ class Contact {
 
   sendOrder() {
     const thisContact = this;
-    const url = select.db.url + '/' + select.db.orders;
+    const url = select.db.url + '/' + select.db.messages;
     const payload = {
-      name: thisContact.dom.inputs.name.value,
-      title: thisContact.dom.inputs.title.value,
-      message: thisContact.dom.inputs.messages.value,
-      products: [],
+      name: thisContact.dom.names.value,
+      title: thisContact.dom.tiles.value,
+      message: thisContact.dom.messages.value,
     };
 
 

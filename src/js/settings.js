@@ -12,15 +12,9 @@ export const select = {
     contact: '#contact',
     submitBtn: 'form button',
     newForm: '.newForm',
-    input: {
-      name: '#name',
-      title: '#title',
-      message: '#message',
-    },
     names: '#name',
-    titles: '[name="title"]',
+    titles: '[messages="title"]',
     messages: '[name="message"]',
-
   },
   db: {
     url:
@@ -28,7 +22,7 @@ export const select = {
       window.location.hostname +
       (window.location.hostname == 'localhost' ? ':3131' : ''),
     products: 'products',
-    orders: 'orders',
+    messages: 'messages',
   },
 
 };

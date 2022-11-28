@@ -31,9 +31,9 @@ const app = {
   initSides: function () {
     const thisApp = this;
     thisApp.sides = document.querySelector(select.containerOf.sides).children;
-    console.log('thisApp.sides:', thisApp.sides);
+    //console.log('thisApp.sides:', thisApp.sides);
     thisApp.brandRights = document.querySelectorAll(select.brand.rights);
-    console.log('thisApp.navLinks:', thisApp.navLinks);
+    //console.log('thisApp.navLinks:', thisApp.navLinks);
 
     for (let right of thisApp.brandRights) {
       right.addEventListener('click', function (event) {
@@ -45,8 +45,8 @@ const app = {
         thisApp.activatePage(id);
       });
     }
-    let sidesHashtagId = thisApp.sides[2].id;
-    console.log('thisApp.sides[0].id:', thisApp.sides[0].id);
+    let sidesHashtagId = thisApp.sides[0].id;
+    //console.log('thisApp.sides[0].id:', thisApp.sides[0].id);
 
     thisApp.activatePage(sidesHashtagId);
 
