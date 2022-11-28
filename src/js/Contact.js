@@ -22,9 +22,6 @@ class Contact {
 
     thisContact.dom.inputs = {};
 
-
-
-
   }
 
   initActions() {
@@ -33,8 +30,12 @@ class Contact {
     thisContact.dom.form.addEventListener('submit', function (event) {
       event.preventDefault();
       thisContact.sendOrder();
+
     });
+
+
   }
+
 
   sendOrder() {
     const thisContact = this;
@@ -45,7 +46,21 @@ class Contact {
       message: thisContact.dom.message.value,
     };
 
-
+    if (thisContact.dom.name.value == '') {
+      alert('Please write your name');
+      return;
+    }
+    if (thisContact.dom.title.value == '') {
+      alert('Please write title of your message');
+      return;
+    }
+    if (thisContact.dom.message.value == '') {
+      alert('Please write your message');
+      return;
+    }
+    else {
+      alert('thank you');
+    }
 
 
     const options = {
