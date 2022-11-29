@@ -49,9 +49,6 @@ class Contact {
       alert('Please write your message');
       return;
     }
-    else {
-      alert('Thank you');
-    }
 
     const options = {
       method: 'POST',
@@ -61,7 +58,10 @@ class Contact {
       body: JSON.stringify(payload),
     };
 
-    fetch(url, options);
+    fetch(url, options).then(function () {
+      alert('Thank you for your message !');
+    });
+
   }
 }
 
