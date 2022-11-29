@@ -11,15 +11,12 @@ const app = {
         return responseRaw.json();
       })
       .then(function (parsedResponse) {
-        // console.log('parsedResponse:', parsedResponse);
         /* save parsedResponse as thisApp.data.products */
         thisApp.data.products = parsedResponse;
         /* execute initMenu method */
         thisApp.initMenu();
       });
   },
-
-
 
   initMenu: function () {
     const thisApp = this;
@@ -31,10 +28,7 @@ const app = {
   initSides: function () {
     const thisApp = this;
     thisApp.sides = document.querySelector(select.containerOf.sides).children;
-    //console.log('thisApp.sides:', thisApp.sides);
     thisApp.brandRights = document.querySelectorAll(select.brand.rights);
-    //console.log('thisApp.navLinks:', thisApp.navLinks);
-
     for (let right of thisApp.brandRights) {
       right.addEventListener('click', function (event) {
         const clickedElement = this;
@@ -46,10 +40,7 @@ const app = {
       });
     }
     let sidesHashtagId = thisApp.sides[0].id;
-    //console.log('thisApp.sides[0].id:', thisApp.sides[0].id);
-
     thisApp.activatePage(sidesHashtagId);
-
   },
 
   activatePage: function (pageId) {
@@ -64,8 +55,6 @@ const app = {
     }
 
     document.querySelector(select.containerOf.discoverBtn).setAttribute('href', '#' + [pageId][0]);
-
-
   },
 
   initContact: function () {

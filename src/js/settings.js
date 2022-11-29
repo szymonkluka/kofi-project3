@@ -6,6 +6,7 @@ export const select = {
     rights: '#brandright a',
   },
   containerOf: {
+    homeProduct: '#homeproducts',
     productList: '#product-list',
     sides: '#sides',
     discoverBtn: '.maintitle a',

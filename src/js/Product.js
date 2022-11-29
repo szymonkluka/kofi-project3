@@ -11,19 +11,14 @@ class Product {
 
   render() {
     const thisProduct = this;
-
     const generatedHTML = templates.product(thisProduct.data); //tworzymy tekst
-
     thisProduct.element = utils.createDOMFromHTML(generatedHTML); // tworzymy dom, który tworzy element html
-
     thisProduct.homeElement = utils.createDOMFromHTML(generatedHTML); //tworzymy dom, który tworzy html
     const productContainer = document.querySelector(
       select.containerOf.productList
     );
-    const homeProductContainer = document.querySelector('#homeproducts'); // wkładamy w container stworzony element
-
+    const homeProductContainer = document.querySelector(select.containerOf.homeProduct); // wkładamy w container stworzony element
     homeProductContainer.appendChild(thisProduct.homeElement); //wkładamy w container stworzony element
-
     productContainer.appendChild(thisProduct.element); // wkładamy w container stworzony element 
   }
 }

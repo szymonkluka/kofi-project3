@@ -11,31 +11,22 @@ class Contact {
 
   getElements(element) {
     const thisContact = this;
-
     thisContact.dom = {};
     thisContact.dom.wrapper = element;
     thisContact.dom.form = thisContact.dom.wrapper.querySelector(select.containerOf.newForm);
-    //console.log(thisContact.dom.form);
     thisContact.dom.name = thisContact.dom.wrapper.querySelector('#name');
     thisContact.dom.title = thisContact.dom.wrapper.querySelector('#title');
     thisContact.dom.message = thisContact.dom.wrapper.querySelector('#message');
-
     thisContact.dom.inputs = {};
-
   }
 
   initActions() {
     const thisContact = this;
-
     thisContact.dom.form.addEventListener('submit', function (event) {
       event.preventDefault();
       thisContact.sendOrder();
-
     });
-
-
   }
-
 
   sendOrder() {
     const thisContact = this;
@@ -59,9 +50,8 @@ class Contact {
       return;
     }
     else {
-      alert('thank you');
+      alert('Thank you');
     }
-
 
     const options = {
       method: 'POST',
@@ -73,10 +63,6 @@ class Contact {
 
     fetch(url, options);
   }
-
-
-
-
 }
 
 export default Contact;
